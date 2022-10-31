@@ -16,7 +16,7 @@ void main()
             s = a[i] + a[j];
             if(s == 45) 
             {
-                printf("The elements are %d and %d",a,b);
+                printf("The elements are %d and %d",a[i],a[j]);
             }
         }
     }
