@@ -22,8 +22,6 @@ void main()
 {
     int i;
     int ch,n;
-    printf("Enter the Number of elements");
-    scanf("%d",&n);
     printf("Enter your choice:\n1.Create an array\n2.Display an array\n3.exit");
     scanf("%d",&ch);
     while(i)
