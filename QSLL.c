@@ -44,9 +44,7 @@ void del() {
   }
   temp = front;
   front = front -> next;
-  printf("\n\tDeleted Student: USN: %d Name: %s Branch: %s\n", temp -
-    >
-    usn, temp -> name, temp -> branch);
+  printf("\n\tDeleted Student: USN: %d Name: %s Branch: %s\n", temp ->usn, temp -> name, temp -> branch);
   free(temp);
 }
 
