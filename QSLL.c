@@ -1,7 +1,5 @@
 #include <stdio.h>
-
 #include <stdlib.h>
-
 struct qlist {
   int usn;
   char name[20];
@@ -14,11 +12,11 @@ void create() {
   printf("\n\t\tCreation of Stack Using SLL");
   printf("\n\t\tEnter the No. of Elements to Create: ");
   scanf("%d", & n);
-
   for (i = 1; i <= n; i++)
-
     insert();
 }
+
+
 void insert() {
   struct qlist * newnode;
   newnode = (struct qlist * ) malloc(sizeof(struct qlist));
@@ -34,10 +32,10 @@ void insert() {
   } else {
     rear -> next = newnode;
     rear = newnode;
-
   }
-
 }
+
+
 void del() {
   struct qlist * temp;
   if (front == NULL) {
@@ -51,14 +49,14 @@ void del() {
     usn, temp -> name, temp -> branch);
   free(temp);
 }
+
+
 void display() {
   struct qlist * temp;
   if (front == NULL) {
     printf("\n\n\tQueue Underflow");
     return;
-
   }
-
   temp = front;
   printf("\n\n\tQueue Elements are : ");
   printf("\n\n\tUSN\tName\t\tBranch\n\n");
@@ -67,6 +65,8 @@ void display() {
     temp = temp -> next;
   }
 }
+
+
 struct qlist * concatenate(struct qlist * list1, struct qlist * list2, struct qlist * list3) {
   struct qlist * temp = list1;
   if (list1 == NULL)
@@ -99,17 +99,18 @@ int main() {
     case 1:
       create();
       display();
-
       break;
 
     case 2:
       insert();
       display();
       break;
+
     case 3:
       del();
       display();
       break;
+
     case 4:
       printf("\n\n\t\tConcatenation of Two Given Lists:");
       printf("\n\t\tEnter number of elements in First List:");
@@ -127,9 +128,9 @@ int main() {
       front = list3;
       display();
       break;
+
     case 5:
       display();
-
       break;
 
     case 6:
