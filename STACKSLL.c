@@ -1,12 +1,12 @@
 #include <stdio.h>
-
 #include <stdlib.h>
-
 struct slist {
   int no;
   struct slist * next;
 };
+
 struct slist * top = NULL;
+
 void create() {
   int i, n;
   printf("\n\t\tCreation of Stack Using SLL");
@@ -15,6 +15,7 @@ void create() {
   for (i = 1; i <= n; i++)
     insert();
 }
+
 void insert() {
   struct slist * newnode;
   newnode = (struct slist * ) malloc(sizeof(struct slist));
@@ -23,11 +24,13 @@ void insert() {
   newnode -> next = NULL;
   if (top == NULL) {
     top = newnode;
-  } else {
+  } 
+  else {
     newnode -> next = top;
     top = newnode;
   }
 }
+
 void del() {
   struct slist * temp;
   if (top == NULL) {
@@ -39,6 +42,7 @@ void del() {
   printf("\n\tDeleted Element = %d\n", temp -> no);
   free(temp);
 }
+
 void search() {
   int count = 1;
   int val;
@@ -46,14 +50,16 @@ void search() {
   if (top == NULL) {
     printf("\n\t\tSingly Linked List is Empty ");
     return;
-  } else {
+  } 
+  else {
     printf("\n\tEnter the Element to Search: ");
     scanf("%d", & val);
     while (temp != NULL) {
       if (temp -> no == val) {
         printf("\n\tElement %d is found at position %d", val, count);
         return;
-      } else {
+      } 
+      else {
         temp = temp -> next;
         count++;
       }
@@ -61,6 +67,7 @@ void search() {
     printf("\n\tElement %d is not Found", val);
   }
 }
+
 void display() {
   struct slist * temp;
   if (top == NULL) {
@@ -74,6 +81,7 @@ void display() {
     temp = temp -> next;
   }
 }
+
 int main() {
   int ch;
   do {
