@@ -2,10 +2,10 @@
 #include <stdlib.h>
 struct slist {
   int no;
-  struct slist * next;
+  struct slist *next;
 };
 
-struct slist * top = NULL;
+struct slist *top = NULL;
 
 void create() {
   int i, n;
@@ -17,8 +17,8 @@ void create() {
 }
 
 void insert() {
-  struct slist * newnode;
-  newnode = (struct slist * ) malloc(sizeof(struct slist));
+  struct slist *newnode;
+  newnode = (struct slist*)malloc(sizeof(struct slist));
   printf("\n\tEnter the element: ");
   scanf("%d", & newnode -> no);
   newnode -> next = NULL;
@@ -32,7 +32,7 @@ void insert() {
 }
 
 void del() {
-  struct slist * temp;
+  struct slist *temp;
   if (top == NULL) {
     printf("\n\n\tStack Underflow");
     return;
@@ -46,7 +46,7 @@ void del() {
 void search() {
   int count = 1;
   int val;
-  struct slist * temp = top;
+  struct slist *temp = top;
   if (top == NULL) {
     printf("\n\t\tSingly Linked List is Empty ");
     return;
@@ -69,7 +69,7 @@ void search() {
 }
 
 void display() {
-  struct slist * temp;
+  struct slist *temp;
   if (top == NULL) {
     printf("\n\n\tStack Underflow");
     return;
