@@ -1,5 +1,4 @@
 #include<stdio.h>
-
 int count = 0, n;
 
 int tower(int n, char s, char t, char d) {
@@ -8,10 +7,10 @@ int tower(int n, char s, char t, char d) {
     count++;
     return 1;
   }
-  tower(n - 1, s, d, t);
+  tower(n-1, s, d, t);
   printf("\n Move disc %d from %c to %c", n, s, d);
   count++;
-  tower(n - 1, t, s, d);
+  tower(n-1, t, s, d);
 }
 int main() {
   printf("\n Enter the no. of discs:");
