@@ -4,9 +4,9 @@ struct qlist {
   int usn;
   char name[20];
   char branch[20];
-  struct qlist * next;
+  struct qlist *next;
 };
-struct qlist * front = NULL, * rear = NULL;
+struct qlist * front = NULL, *rear = NULL;
 void create() {
   int i, n;
   printf("\n\t\tCreation of Stack Using SLL");
@@ -18,10 +18,10 @@ void create() {
 
 
 void insert() {
-  struct qlist * newnode;
-  newnode = (struct qlist * ) malloc(sizeof(struct qlist));
+  struct qlist *newnode;
+  newnode = (struct qlist* ) malloc(sizeof(struct qlist));
   printf("\n\tEnter USN: ");
-  scanf("%d", & newnode -> usn);
+  scanf("%d", &newnode -> usn);
   printf("\n\tEnter Name: ");
   scanf("%s", newnode -> name);
   printf("\n\tEnter Branch: ");
@@ -37,7 +37,7 @@ void insert() {
 
 
 void del() {
-  struct qlist * temp;
+  struct qlist *temp;
   if (front == NULL) {
     printf("\n\n\tQueue Underflow");
     return;
@@ -50,7 +50,7 @@ void del() {
 
 
 void display() {
-  struct qlist * temp;
+  struct qlist *temp;
   if (front == NULL) {
     printf("\n\n\tQueue Underflow");
     return;
@@ -65,8 +65,8 @@ void display() {
 }
 
 
-struct qlist * concatenate(struct qlist * list1, struct qlist * list2, struct qlist * list3) {
-  struct qlist * temp = list1;
+struct qlist *concatenate(struct qlist *list1, struct qlist *list2, struct qlist *list3) {
+  struct qlist *temp = list1;
   if (list1 == NULL)
     list3 = list2;
   else if (list2 == NULL)
@@ -113,15 +113,15 @@ int main() {
       printf("\n\n\t\tConcatenation of Two Given Lists:");
       printf("\n\t\tEnter number of elements in First List:");
       int i, n, m;
-      scanf("%d", & n);
+      scanf("%d", &n);
       for (i = 1; i <= n; i++)
         insert();
-      struct qlist * list1 = front, * front = NULL;
+      struct qlist *list1 = front, *front = NULL;
       printf("\n\t\tEnter number of elements in Second List:");
       scanf("%d", & m);
       for (i = 1; i <= m; i++)
         insert();
-      struct qlist * list2 = front, * list3;
+      struct qlist *list2 = front, *list3;
       concatenate(list1, list2, list3);
       front = list3;
       display();
