@@ -94,7 +94,7 @@ void prime()
 void game()
 {
     srand(time(0));
-    int num=(rand() % 30)+1,guess,try=1;
+    int num=(rand() % 30)+1,guess,try=0;
     //printf("%d\n",num);
     line();
     printf("Guess a number between 1-30\n\n");
