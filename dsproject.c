@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<math.h>
+#include<time.h>
 #include<stdlib.h>
 void line()
 {
@@ -90,6 +91,33 @@ void prime()
     else
         printf("%d is not a prime number\n",n);
 }
+void game()
+{
+    srand(time(0));
+    int num=(rand() % 30)+1,guess,try=1;
+    //printf("%d\n",num);
+    line();
+    printf("Guess a number between 1-30\nYou'll be having 5 chances to guess\n\n\n\n");
+    do
+    {
+        printf("Enter the guess\n");
+        scanf("%d",&guess);
+        if(num<guess)
+        {
+            printf("C'mon it's less than %d\n",guess);
+        }
+        else if(num>guess)
+        {
+            printf("It's more than %d\n",guess);
+        }
+        else{
+            printf("Yay you won!\n");
+        }
+        try++;
+    } while (guess != num);
+    printf("Answer was %d\n",num);
+    printf("Number of guesses = %d\n",try);
+}
 void main()
 {
     int choice;
@@ -101,7 +129,8 @@ void main()
     printf("1 - Basic Calculator\n");
     printf("2 - Quadratic Equation Solver\n");
     printf("3 - Prime Number Checker\n");
-    printf("4 - exit\n");
+    printf("4 - Number guessing game\n");
+    printf("5 - exit\n");
     line();
     printf("Enter your Choice\n");
     scanf("%d",&choice);
@@ -113,7 +142,9 @@ void main()
         break;
         case 3 : prime();
         break;
-        case 4 : exit(0);
+        case 4 : game();
+        break;
+        case 5 : exit(0);
         default : printf("Wrong choice yoo try again");
         break;
     }
