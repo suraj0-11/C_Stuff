@@ -97,7 +97,7 @@ void game()
     int num=(rand() % 30)+1,guess,try=1;
     //printf("%d\n",num);
     line();
-    printf("Guess a number between 1-30\nYou'll be having 5 chances to guess\n\n\n\n");
+    printf("Guess a number between 1-30\n\n");
     do
     {
         printf("Enter the guess\n");
